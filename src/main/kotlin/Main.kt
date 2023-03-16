@@ -37,11 +37,21 @@ fun main(args: Array<String>) {
 
     var n:Int = p*q
     var k:Int = (p-1)*(q-1)
-    var e = (0..20000).random() % k +2
 
+    var e = (0..20000).random() % k +2
     while (nwd(k,e)!=1 && !czyPierwsza(e)){
         e++
     }
-    println(e)
-    println("${p}, ${q}")
+    println("e: ${e}")
+
+    var d:Int = (0..k).random()
+    while (e*d % k !=1){
+        d++
+    }
+    println("d: ${d}")
+
+    println("-----------------------------------------------")
+
+    println("Klucz publiczny: ${e}${n}")
+    println("Klucz prywatny: ${d}${n}")
 }
